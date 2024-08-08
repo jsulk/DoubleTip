@@ -95,8 +95,6 @@
 			children = (
 				DEF4BF1E2C651A9000CB264A /* Supporting Files */,
 				DEF4BF1D2C651A8500CB264A /* Views */,
-				DECB5C092C6516550077CA57 /* DoubleTipApp.swift */,
-				DECB5C0B2C6516550077CA57 /* ContentView.swift */,
 				DECB5C0D2C6516580077CA57 /* Assets.xcassets */,
 				DECB5C0F2C6516580077CA57 /* Preview Content */,
 			);
@@ -114,6 +112,7 @@
 		DEF4BF1D2C651A8500CB264A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DECB5C0B2C6516550077CA57 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +120,7 @@
 		DEF4BF1E2C651A9000CB264A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DECB5C092C6516550077CA57 /* DoubleTipApp.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
