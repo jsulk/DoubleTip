@@ -17,6 +17,7 @@
 		DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */; };
 		DEF4BF402C6677D400CB264A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEF4BF3F2C6677D400CB264A /* Localizable.strings */; };
 		DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF412C667B3A00CB264A /* DTBundle.swift */; };
+		DEF4BF442C6682A500CB264A /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePage+ViewModel.swift"; sourceTree = "<group>"; };
 		DEF4BF3F2C6677D400CB264A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DEF4BF412C667B3A00CB264A /* DTBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTBundle.swift; sourceTree = "<group>"; };
+		DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				DECB5C092C6516550077CA57 /* DoubleTipApp.swift */,
 				DEF4BF3F2C6677D400CB264A /* Localizable.strings */,
 				DEF4BF412C667B3A00CB264A /* DTBundle.swift */,
+				DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */,
 				DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */,
 				DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */,
+				DEF4BF442C6682A500CB264A /* UtilityExtensions.swift in Sources */,
 				DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

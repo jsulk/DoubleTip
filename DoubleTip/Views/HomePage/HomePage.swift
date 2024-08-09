@@ -11,6 +11,8 @@ struct HomePage: View {
     
     private let homePageTitleKey = DTBunle.string("home_page_title")
     private let homePageSubtitleKey = DTBunle.string("home_page_subtitle")
+    private let titleFont = DTBunle.string("font_large_page_title")
+    private let subtitleFont = DTBunle.string("font_page_subtitle")
     
     var body: some View {
         contentView
@@ -23,22 +25,21 @@ struct HomePage: View {
             
             pageSubtitle
                 .padding(.bottom, 16)
-            
-            Spacer()
-            
         }
         .padding()
     }
     
     var pageTitle: some View {
         Text(homePageTitleKey)
-            .font(.largeTitle)
+            .font(.custom(titleFont, size: 36))
+            .foregroundStyle(Color.doubleTipGreen.gradient)
     }
     
     var pageSubtitle: some View {
         Text(homePageSubtitleKey)
-            .font(.subheadline)
             .multilineTextAlignment(.center)
+            .font(.custom(subtitleFont, size: 18))
+            .foregroundStyle(Color.doubleTipGreen.gradient)
     }
 }
 

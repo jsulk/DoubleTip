@@ -7,7 +7,11 @@
  */
 
 //MARK: App Strings
-"home_page_title" = "Double Tip!";
+"home_page_title" = "Double Tip";
 "home_page_subtitle" = "Enter the cost and the percentage below to receive your two tips!";
+
+//MARK: Font Strings
+"font_large_page_title" = "Futura-CondensedExtraBold";
+"font_page_subtitle" = "Futura-Medium";
 
 //MARK: Tips
