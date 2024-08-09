@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C092C6516550077CA57 /* DoubleTipApp.swift */; };
-		DECB5C0C2C6516550077CA57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C0B2C6516550077CA57 /* ContentView.swift */; };
+		DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C0B2C6516550077CA57 /* HomePage.swift */; };
 		DECB5C0E2C6516580077CA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB5C0D2C6516580077CA57 /* Assets.xcassets */; };
 		DECB5C112C6516580077CA57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB5C102C6516580077CA57 /* Preview Assets.xcassets */; };
 		DEF4BF262C651AF100CB264A /* DoubleTipUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF252C651AF100CB264A /* DoubleTipUnitTests.swift */; };
 		DEF4BF342C651B2C00CB264A /* DoubleTipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF332C651B2C00CB264A /* DoubleTipUITests.swift */; };
 		DEF4BF362C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF352C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift */; };
+		DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */; };
+		DEF4BF402C6677D400CB264A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEF4BF3F2C6677D400CB264A /* Localizable.strings */; };
+		DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF412C667B3A00CB264A /* DTBundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		DECB5C062C6516550077CA57 /* DoubleTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubleTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECB5C092C6516550077CA57 /* DoubleTipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipApp.swift; sourceTree = "<group>"; };
-		DECB5C0B2C6516550077CA57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DECB5C0B2C6516550077CA57 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		DECB5C0D2C6516580077CA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECB5C102C6516580077CA57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DEF4BF232C651AF100CB264A /* DoubleTipUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoubleTipUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,9 @@
 		DEF4BF312C651B2C00CB264A /* DoubleTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoubleTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF4BF332C651B2C00CB264A /* DoubleTipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipUITests.swift; sourceTree = "<group>"; };
 		DEF4BF352C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePage+ViewModel.swift"; sourceTree = "<group>"; };
+		DEF4BF3F2C6677D400CB264A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DEF4BF412C667B3A00CB264A /* DTBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTBundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +118,7 @@
 		DEF4BF1D2C651A8500CB264A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DECB5C0B2C6516550077CA57 /* ContentView.swift */,
+				DEF4BF3C2C6676E400CB264A /* HomePage */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				DECB5C092C6516550077CA57 /* DoubleTipApp.swift */,
+				DEF4BF3F2C6677D400CB264A /* Localizable.strings */,
+				DEF4BF412C667B3A00CB264A /* DTBundle.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,6 +157,15 @@
 				DEF4BF352C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift */,
 			);
 			path = DoubleTipUITests;
+			sourceTree = "<group>";
+		};
+		DEF4BF3C2C6676E400CB264A /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				DECB5C0B2C6516550077CA57 /* HomePage.swift */,
+				DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DECB5C112C6516580077CA57 /* Preview Assets.xcassets in Resources */,
+				DEF4BF402C6677D400CB264A /* Localizable.strings in Resources */,
 				DECB5C0E2C6516580077CA57 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,8 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECB5C0C2C6516550077CA57 /* ContentView.swift in Sources */,
+				DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */,
 				DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */,
+				DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */,
+				DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,13 @@
+/*
+ Localizable.strings
+ DoubleTip
+ 
+ Created by Jake Sulkoske on 8/9/24
+ 
+ */
+
+//MARK: App Strings
+"home_page_title" = "Double Tip!";
+"home_page_subtitle" = "Enter the cost and the percentage below to receive your two tips!";
+
+//MARK: Tips
