@@ -11,7 +11,7 @@ import SwiftUI
 struct DoubleTipApp: App {
     var body: some Scene {
         WindowGroup {
-            HomePage()
+            HomePage(viewModel: HomePage.ViewModel())
         }
     }
 }
