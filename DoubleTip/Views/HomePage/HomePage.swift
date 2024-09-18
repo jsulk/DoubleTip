@@ -36,8 +36,6 @@ struct HomePage: View {
             
             calculatorView
             
-            // doubleTipView
-            
             Spacer()
         }
         .padding()
