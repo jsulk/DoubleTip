@@ -33,13 +33,17 @@ extension HomePage {
                 .combineLatest($expenseAmount)
                 .filter { !($0 == nil) && !($1 == nil) }
                 .map { [weak self] tipPercent, expense in
-                    return self?.totalAmountWiithTipAsDouble(totalExpense: expense, tipPercentage: tipPercent).formattedAsCurrency() ?? DTBunle.string("error_calculating")
+                    return self?.totalAmountWiithTipAsDouble(totalExpense: expense, tipPercentage: tipPercent)?.formattedAsCurrency() ?? DTBunle.string("error_calculating")
                 }
                 .assign(to: &$totalAmount)
         }
         
-        private func totalAmountWiithTipAsDouble(totalExpense: Double?, tipPercentage: Int?) -> Double {
-            guard let tipPercentage, let totalExpense else { return 0.00 }
+        private func totalAmountWiithTipAsDouble(totalExpense: Double?, tipPercentage: Int?) -> Double? {
+            guard
+                let tipPercentage,
+                let totalExpense,
+                tipPercentage != 0
+            else { return nil }
             let percentageDecimal: Double = Double(tipPercentage) / 100.00
             let totalTipAmount: Double = totalExpense * percentageDecimal
             let totalAmountWithTip: Double = totalExpense + totalTipAmount
