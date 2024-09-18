@@ -37,4 +37,11 @@ final class DoubleTipUnitTests: XCTestCase {
         let amount = GlobalUtilities.totalAmountWiithTipAsDouble(totalExpense: expenseValue, tipPercentage: tipPercentageValue)
         XCTAssertEqual(amount, expectedOutput)
     }
+    
+    func test_total_amount_wiith_tip_returns_nil_with_0() {
+        let expenseValue: Double = 100.00
+        let tipPercentageValue: Int = 0
+        let amount = GlobalUtilities.totalAmountWiithTipAsDouble(totalExpense: expenseValue, tipPercentage: tipPercentageValue)
+        XCTAssertEqual(amount, nil)
+    }
 }
