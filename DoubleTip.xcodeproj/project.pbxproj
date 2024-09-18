@@ -11,6 +11,7 @@
 		DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C0B2C6516550077CA57 /* HomePage.swift */; };
 		DECB5C0E2C6516580077CA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB5C0D2C6516580077CA57 /* Assets.xcassets */; };
 		DECB5C112C6516580077CA57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB5C102C6516580077CA57 /* Preview Assets.xcassets */; };
+		DEE693F12C9B64CD00963C6E /* GlobalUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */; };
 		DEF4BF262C651AF100CB264A /* DoubleTipUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF252C651AF100CB264A /* DoubleTipUnitTests.swift */; };
 		DEF4BF342C651B2C00CB264A /* DoubleTipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF332C651B2C00CB264A /* DoubleTipUITests.swift */; };
 		DEF4BF362C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF352C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift */; };
@@ -43,6 +44,7 @@
 		DECB5C0B2C6516550077CA57 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		DECB5C0D2C6516580077CA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECB5C102C6516580077CA57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUtilities.swift; sourceTree = "<group>"; };
 		DEF4BF232C651AF100CB264A /* DoubleTipUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoubleTipUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF4BF252C651AF100CB264A /* DoubleTipUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipUnitTests.swift; sourceTree = "<group>"; };
 		DEF4BF312C651B2C00CB264A /* DoubleTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoubleTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				DEF4BF3F2C6677D400CB264A /* Localizable.strings */,
 				DEF4BF412C667B3A00CB264A /* DTBundle.swift */,
 				DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */,
+				DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */,
 				DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */,
 				DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */,
+				DEE693F12C9B64CD00963C6E /* GlobalUtilities.swift in Sources */,
 				DEF4BF442C6682A500CB264A /* UtilityExtensions.swift in Sources */,
 				DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */,
 			);
