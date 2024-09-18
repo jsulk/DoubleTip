@@ -26,3 +26,15 @@ extension View {
         }
     }
 }
+
+//MARK: Currency calculator
+extension Double {
+    public func formattedAsCurrency(maxDecimalPoint: Int = 2) -> String? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale(identifier: "en_US")
+        numberFormatter.numberStyle = .currency
+        numberFormatter.maximumFractionDigits = maxDecimalPoint
+        let formattedNumber = numberFormatter.string(from: NSNumber(value: self))
+        return formattedNumber
+    }
+}

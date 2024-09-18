@@ -80,7 +80,6 @@ struct HomePage: View {
                 }
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
-                .isHidden($viewModel.tipPercentIsHidden.wrappedValue)
                 
                 Section {
                     VStack {
@@ -94,7 +93,6 @@ struct HomePage: View {
                 }
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
-                .isHidden($viewModel.totalAmountIsHidden.wrappedValue)
                 
             }
             .scrollContentBackground(.hidden)

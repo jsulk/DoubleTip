@@ -14,4 +14,7 @@
 "font_large_page_title" = "Futura-CondensedExtraBold";
 "font_page_subtitle" = "Futura-Medium";
 
+//MARK: Error Strings
+"error_calculating" = "We're sorry, there was an error calculating your total tip amount.";
+
 //MARK: Tips
