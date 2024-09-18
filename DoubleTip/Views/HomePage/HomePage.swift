@@ -104,12 +104,9 @@ struct HomePage: View {
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
             }
-            .frame(maxWidth: .infinity)
+            .scrollContentBackground(.hidden)
         }
     }
-    
-//    var doubleTipView: some View {
-//    }
 }
 
 #Preview {
