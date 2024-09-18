@@ -39,10 +39,9 @@ extension HomePage {
         }
         
         private func totalAmountWiithTipAsDouble(totalExpense: Double?, tipPercentage: Int?) -> Double? {
-            guard
-                let tipPercentage,
-                let totalExpense,
-                tipPercentage != 0
+            guard let tipPercentage,
+                  let totalExpense,
+                  tipPercentage != 0
             else { return nil }
             let percentageDecimal: Double = Double(tipPercentage) / 100.00
             let totalTipAmount: Double = totalExpense * percentageDecimal
