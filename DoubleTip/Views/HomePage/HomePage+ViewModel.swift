@@ -14,28 +14,32 @@ extension HomePage {
         @Published var expenseAmount: Double? = nil
         @Published var tipPercentage: Int? = nil
         @Published var totalAmount: String = ""
-        @Published var tipPercentIsHidden: Bool = true
         @Published var totalAmountIsHidden: Bool = true
         
+        private var currentCalculatedTip: Int? = nil
+        private var currentCalculatedExpense: Double? = nil
+        
         init() {
-            $expenseAmount
-                .map { return !($0 != nil) }
-                .assign(to: &$tipPercentIsHidden)
-            
             $tipPercentage
                 .combineLatest($expenseAmount)
-                .map {
-                    return !($0 != nil && $1 != nil)
+                .map { [weak self] in
+                    let expenseAndTipNil = $0 == nil || $1 == nil
+                    let expenseAndTipDifferentValyesValues = $0 != self?.currentCalculatedTip || $1 != self?.currentCalculatedExpense
+                    return (expenseAndTipNil || expenseAndTipDifferentValyesValues)
                 }
                 .assign(to: &$totalAmountIsHidden)
+        }
+        
+        func calculateTipPercentage() {
             
-            $tipPercentage
-                .combineLatest($expenseAmount)
-                .filter { !($0 == nil) && !($1 == nil) }
-                .map { tipPercent, expense in
-                    return GlobalUtilities.totalAmountWiithTipAsDouble(totalExpense: expense, tipPercentage: tipPercent)?.formattedAsCurrency() ?? DTBunle.string("error_calculating")
-                }
-                .assign(to: &$totalAmount)
+            guard let tipPercentage, let expenseAmount else { return }
+            
+            self.currentCalculatedTip = tipPercentage
+            self.currentCalculatedExpense = expenseAmount
+            
+            totalAmount = GlobalUtilities.totalAmountWiithTipAsDouble(totalExpense: expenseAmount, tipPercentage: tipPercentage)?.formattedAsCurrency() ?? DTBunle.string("error_calculating")
+            
+            totalAmountIsHidden = false
         }
     }
 }

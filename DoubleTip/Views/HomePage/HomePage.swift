@@ -15,6 +15,7 @@ struct HomePage: View {
     
     private let homePageTitleKey = DTBunle.string("home_page_title")
     private let homePageSubtitleKey = DTBunle.string("home_page_subtitle")
+    private let calculateButtonTitle = DTBunle.string("calculate")
     private let titleFont = DTBunle.string("font_large_page_title")
     private let subtitleFont = DTBunle.string("font_page_subtitle")
     
@@ -34,6 +35,8 @@ struct HomePage: View {
             Spacer()
             
             calculatorView
+            
+            // doubleTipView
             
             Spacer()
         }
@@ -82,22 +85,31 @@ struct HomePage: View {
                 .multilineTextAlignment(.center)
                 
                 Section {
+                    Button(action: self.viewModel.calculateTipPercentage, label: {
+                        Text(calculateButtonTitle)
+                    })
+                }
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
+                
+                Section {
                     VStack {
                         Text("TOTAL")
                             .font(.custom(subtitleFont, size: 16))
                             .foregroundStyle(Color.gray)
                         Text(viewModel.totalAmount)
-                        
                     }
-                    
                 }
+                .isHidden(viewModel.totalAmountIsHidden)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
-                
             }
-            .scrollContentBackground(.hidden)
+            .frame(maxWidth: .infinity)
         }
     }
+    
+//    var doubleTipView: some View {
+//    }
 }
 
 #Preview {
