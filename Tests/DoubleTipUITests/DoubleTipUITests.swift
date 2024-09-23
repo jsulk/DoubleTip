@@ -31,7 +31,19 @@ final class DoubleTipUITests: XCTestCase {
         }
     }
     
-    func test_calculate_button_action() {
+    func testRequiredFieldsShowsOnLaunch() {
+        let collectionViewsQuery = app.collectionViews
         
+        XCTAssert(collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["BILL AMOUNT"]/*[[".cells.staticTexts[\"BILL AMOUNT\"]",".staticTexts[\"BILL AMOUNT\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists, "Bill amount section title is not showing on launch")
+        XCTAssert(collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["$0.00"]/*[[".cells.textFields[\"$0.00\"]",".textFields[\"$0.00\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists, "Bill amount text field is not showing on launch")
+        
+        XCTAssert(collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["TIP PERCENTAGE"]/*[[".cells.staticTexts[\"TIP PERCENTAGE\"]",".staticTexts[\"TIP PERCENTAGE\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists, "Tip percentage section title is not showing on launch")
+        XCTAssert(collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["15%"]/*[[".cells.textFields[\"15%\"]",".textFields[\"15%\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists, "Tip percentage text field is not showing on launch")
+        
+        XCTAssert(collectionViewsQuery/*@START_MENU_TOKEN@*/.buttons["Calculate"]/*[[".cells.buttons[\"Calculate\"]",".buttons[\"Calculate\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists, "Calculate button is not showing on launch")
+        
+        XCTAssertFalse(collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["TOTAL"]/*[[".cells.staticTexts[\"TOTAL\"]",".staticTexts[\"TOTAL\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists, "Total section title is showing on launch")
+        XCTAssertFalse(collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["$120.00"]/*[[".cells.staticTexts[\"$120.00\"]",".staticTexts[\"$120.00\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists, "Total text field is showing on launch")
     }
 }
+
