@@ -18,19 +18,19 @@ final class DoubleTipUnitTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_currency_formatter_two_decimals() {
+    func testCurrencyFormatterTwoDecimals() {
         let expectedStringValue: String = "$120.00"
         let amountAsDouble: Double = 120.00
         XCTAssertEqual(amountAsDouble.formattedAsCurrency(), expectedStringValue)
     }
     
-    func test_currency_formatter_no_decimals() {
+    func testCurrencyFormatterNoDecimals() {
         let expectedStringValue: String = "$120"
         let amountAsDouble: Double = 120.00
         XCTAssertEqual(amountAsDouble.formattedAsCurrency(maxDecimalPoint: 0), expectedStringValue)
     }
     
-    func test_total_amount_wiith_tip_as_double() {
+    func testTotalAmountWithTipAsDouble() {
         let expenseValue: Double = 100.00
         let tipPercentageValue: Int = 20
         let expectedOutput: Double = 120.00
@@ -38,7 +38,7 @@ final class DoubleTipUnitTests: XCTestCase {
         XCTAssertEqual(amount, expectedOutput)
     }
     
-    func test_total_amount_wiith_tip_returns_nil_with_0() {
+    func testTotalAmountWithTipReturnsNilWithZeroValue() {
         let expenseValue: Double = 100.00
         let tipPercentageValue: Int = 0
         let amount = GlobalUtilities.totalAmountWiithTipAsDouble(totalExpense: expenseValue, tipPercentage: tipPercentageValue)
