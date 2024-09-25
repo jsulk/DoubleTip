@@ -6,22 +6,17 @@
 //
 
 import Foundation
+import Combine
 
 struct RedditAccessTokenDataManager {
     
     fileprivate let baseUrl: URL = URL(string: "https://www.reddit.com/api/v1/access_token")!
     
-    public func getAccessToken(completion: @escaping (String?, LocalizedError?) -> Void) {
-        let task = URLSession.shared.dataTask(with: getFormattedRequest()) { (data, response, error) in
-            if error != nil {
-                completion(nil, AppError.network)
-            } else if let data = data {
-                if let accessTokenData = try? JSONDecoder().decode(AccessTokenData.self, from: data) {
-                    completion(accessTokenData.access_token, nil)
-                }
-            }
-        }
-        task.resume()
+    public func getAccessToken() -> AnyPublisher<AccessTokenData, Error> {
+        return URLSession.shared.dataTaskPublisher(for: getFormattedRequest())
+            .map({ $0.data })
+            .decode(type: AccessTokenData.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
     }
     
     private func getFormattedRequest() -> URLRequest {

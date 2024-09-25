@@ -18,10 +18,11 @@ extension HomePage {
         
         private var currentCalculatedTip: Int? = nil
         private var currentCalculatedExpense: Double? = nil
-        
-        private let accessTokenDataManager = RedditAccessTokenDataManager()
+        private var cancellables = Set<AnyCancellable>()
         
         init() {
+            fetchTipDataAsync()
+            
             $tipPercentage
                 .combineLatest($expenseAmount)
                 .map { [weak self] in
@@ -30,18 +31,24 @@ extension HomePage {
                     return (expenseAndTipNil || expenseAndTipDifferentValyesValues)
                 }
                 .assign(to: &$totalAmountIsHidden)
-            
-            getAccessToken()
         }
         
-        func getAccessToken() {
-            accessTokenDataManager.getAccessToken { accessToken, error in
-                if let accessToken {
-                    print("Token Success: \(accessToken)")
-                } else {
-                    print("Token Fail")
+        func fetchTipDataAsync() {
+            RedditAccessTokenDataManager().getAccessToken().flatMap { accessTokenData -> AnyPublisher<AccessTokenData, Error> in
+                RedditAccessTokenDataManager().getAccessToken()
+            }.sink { result in
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                default:
+                    print("Success")
+                }
+            } receiveValue: { accessTokenData in
+                DispatchQueue.main.async {
+                    print("AccessTOKEN \(accessTokenData.access_token)")
                 }
             }
+            .store(in: &cancellables)
         }
         
         func calculateTipPercentage() {
