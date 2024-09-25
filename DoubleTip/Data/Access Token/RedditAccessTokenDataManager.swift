@@ -22,8 +22,6 @@ struct RedditAccessTokenDataManager {
     private func getFormattedRequest() -> URLRequest {
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "*/*",
-            "Accept-Encoding": "gzip, deflate, br",
             "Authorization": getFormatAuthorization()
         ]
         

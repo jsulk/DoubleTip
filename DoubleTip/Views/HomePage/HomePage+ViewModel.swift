@@ -34,18 +34,18 @@ extension HomePage {
         }
         
         func fetchTipDataAsync() {
-            RedditAccessTokenDataManager().getAccessToken().flatMap { accessTokenData -> AnyPublisher<AccessTokenData, Error> in
-                RedditAccessTokenDataManager().getAccessToken()
+            RedditAccessTokenDataManager().getAccessToken().flatMap { accessTokenData -> AnyPublisher<TipDataResponse, Error> in
+                SubredditDataManager().getTips(accessToken: accessTokenData.access_token)
             }.sink { result in
                 switch result {
                 case .failure(let error):
                     print(error.localizedDescription)
                 default:
-                    print("Success")
+                    break
                 }
-            } receiveValue: { accessTokenData in
+            } receiveValue: { tipDataObject in
                 DispatchQueue.main.async {
-                    print("AccessTOKEN \(accessTokenData.access_token)")
+                    print("Tip array: \(tipDataObject.data.children)")
                 }
             }
             .store(in: &cancellables)
