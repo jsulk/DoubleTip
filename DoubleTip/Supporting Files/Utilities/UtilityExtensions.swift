@@ -38,3 +38,24 @@ extension Double {
         return formattedNumber
     }
 }
+
+//MARK: App Errors
+enum AppError: LocalizedError {
+    case formatting, network, parsing
+    
+    var errorTitle: String? {
+        switch self {
+        case .formatting, .parsing:
+            return DTBunle.string("error_internal_error")
+        case .network:
+            return DTBunle.string("error_network_error")
+        }
+    }
+    
+    var errorDescription: String? {
+        switch self {
+        case .formatting, .network, .parsing:
+            return DTBunle.string("error_try_again_later")
+        }
+    }
+}

@@ -19,6 +19,8 @@ extension HomePage {
         private var currentCalculatedTip: Int? = nil
         private var currentCalculatedExpense: Double? = nil
         
+        private let accessTokenDataManager = RedditAccessTokenDataManager()
+        
         init() {
             $tipPercentage
                 .combineLatest($expenseAmount)
@@ -28,6 +30,18 @@ extension HomePage {
                     return (expenseAndTipNil || expenseAndTipDifferentValyesValues)
                 }
                 .assign(to: &$totalAmountIsHidden)
+            
+            getAccessToken()
+        }
+        
+        func getAccessToken() {
+            accessTokenDataManager.getAccessToken { accessToken, error in
+                if let accessToken {
+                    print("Token Success: \(accessToken)")
+                } else {
+                    print("Token Fail")
+                }
+            }
         }
         
         func calculateTipPercentage() {

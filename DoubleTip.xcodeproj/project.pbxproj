@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEB27AD12CA464E9002627EF /* SubredditDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB27AD02CA464E9002627EF /* SubredditDataManager.swift */; };
+		DEB27AD32CA4651C002627EF /* RedditAccessTokenDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB27AD22CA4651C002627EF /* RedditAccessTokenDataManager.swift */; };
+		DEB27AD52CA469F6002627EF /* AccessTokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB27AD42CA469F6002627EF /* AccessTokenData.swift */; };
 		DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C092C6516550077CA57 /* DoubleTipApp.swift */; };
 		DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C0B2C6516550077CA57 /* HomePage.swift */; };
 		DECB5C0E2C6516580077CA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB5C0D2C6516580077CA57 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DEB27AD02CA464E9002627EF /* SubredditDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditDataManager.swift; sourceTree = "<group>"; };
+		DEB27AD22CA4651C002627EF /* RedditAccessTokenDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAccessTokenDataManager.swift; sourceTree = "<group>"; };
+		DEB27AD42CA469F6002627EF /* AccessTokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenData.swift; sourceTree = "<group>"; };
 		DECB5C062C6516550077CA57 /* DoubleTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubleTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECB5C092C6516550077CA57 /* DoubleTipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipApp.swift; sourceTree = "<group>"; };
 		DECB5C0B2C6516550077CA57 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
@@ -81,6 +87,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DEB27ACC2CA4569A002627EF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */,
+				DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DEB27ACD2CA464AD002627EF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DEB27ACF2CA464C3002627EF /* Data Models */,
+				DEB27ACE2CA464BB002627EF /* Data Managers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DEB27ACE2CA464BB002627EF /* Data Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DEB27AD02CA464E9002627EF /* SubredditDataManager.swift */,
+				DEB27AD22CA4651C002627EF /* RedditAccessTokenDataManager.swift */,
+			);
+			path = "Data Managers";
+			sourceTree = "<group>";
+		};
+		DEB27ACF2CA464C3002627EF /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEB27AD42CA469F6002627EF /* AccessTokenData.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
 		DECB5BFD2C6516550077CA57 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +144,7 @@
 		DECB5C082C6516550077CA57 /* DoubleTip */ = {
 			isa = PBXGroup;
 			children = (
+				DEB27ACD2CA464AD002627EF /* Data */,
 				DEF4BF1E2C651A9000CB264A /* Supporting Files */,
 				DEF4BF1D2C651A8500CB264A /* Views */,
 				DECB5C0D2C6516580077CA57 /* Assets.xcassets */,
@@ -130,11 +172,10 @@
 		DEF4BF1E2C651A9000CB264A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DEB27ACC2CA4569A002627EF /* Utilities */,
 				DECB5C092C6516550077CA57 /* DoubleTipApp.swift */,
 				DEF4BF3F2C6677D400CB264A /* Localizable.strings */,
 				DEF4BF412C667B3A00CB264A /* DTBundle.swift */,
-				DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */,
-				DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,8 +348,11 @@
 			files = (
 				DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */,
 				DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */,
+				DEB27AD52CA469F6002627EF /* AccessTokenData.swift in Sources */,
 				DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */,
 				DEE693F12C9B64CD00963C6E /* GlobalUtilities.swift in Sources */,
+				DEB27AD12CA464E9002627EF /* SubredditDataManager.swift in Sources */,
+				DEB27AD32CA4651C002627EF /* RedditAccessTokenDataManager.swift in Sources */,
 				DEF4BF442C6682A500CB264A /* UtilityExtensions.swift in Sources */,
 				DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */,
 			);
