@@ -24,19 +24,3 @@ struct Tip: Decodable {
     var title: String
     var author: String
 }
-
-
-//class TipOfflineDataController: ObservableObject {
-//    let container: NSPersistentContainer = NSPersistentContainer(name: "LifeTip")
-//    
-//    init() {
-//        container.loadPersistentStores { description, error in
-//            guard error == nil else {
-//                // TODO: Handle error if load fails
-//                print("Load of persistent storage failed")
-//                return
-//            }
-//            
-//        }
-//    }
-//}

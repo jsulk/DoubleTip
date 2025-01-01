@@ -28,7 +28,7 @@ extension HomePage {
         private var cancellables = Set<AnyCancellable>()
         
         init() {
-            container = NSPersistentContainer(name: "LifeTip")
+            container = NSPersistentContainer(name: DTBunle.string("life_tip"))
             loadPersistentCache()
             
             $tipPercentage
@@ -44,9 +44,9 @@ extension HomePage {
                 .map {
                     guard let tipTitle = $0?.title else {
                         // TODO: manage Strings
-                        return "We encountered an error loading a tip for you. Our default tip is: \"Being a software engineer is hard!\""
+                        return DTBunle.string("error_no_tips")
                     }
-                    return "\"\(tipTitle)\""
+                    return DTBunle.string("tip_title", args: tipTitle)
                 }
                 .assign(to: &$lifeTipTitle)
             
@@ -54,9 +54,9 @@ extension HomePage {
                 .map {
                     // TODO: manage Strings
                     guard let author = $0?.author, author != "[deleted]" else {
-                        return "- Author unknown"
+                        return DTBunle.string("author_unknown")
                     }
-                    return "- \(author)"
+                    return DTBunle.string("author", args: author)
                 }
                 .assign(to: &$lifeTipAuthor)
         }
@@ -90,7 +90,7 @@ extension HomePage {
         
         private func fetchPersistentLifeTips() async {
             // TODO: manage Strings
-            let lifeTipRequest: NSFetchRequest = NSFetchRequest<LifeTip>(entityName: "LifeTip")
+            let lifeTipRequest: NSFetchRequest = NSFetchRequest<LifeTip>(entityName: DTBunle.string("life_tip"))
             do {
                 let localStorageLifeTips = try container.viewContext.fetch(lifeTipRequest)
                 if localStorageLifeTips.isEmpty {

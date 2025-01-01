@@ -13,4 +13,9 @@ public class DTBunle {
     public static func string(_ key: String) -> String {
         return DTBunle.bundle.localizedString(forKey: key, value: nil, table: nil)
     }
+    
+    public static func string(_ key: String, args: CVarArg...) -> String {
+        let base = DTBunle.bundle.localizedString(forKey: key, value: nil, table: nil)
+        return String.localizedStringWithFormat(base, args)
+    }
 }

@@ -10,9 +10,7 @@ import SwiftUI
 import Combine
 
 struct HomePage: View {
-    
     @StateObject var viewModel: ViewModel
-//    @EnvironmentObject var taskObject: TaskObservableObject
     
     private let homePageTitleKey = DTBunle.string("home_page_title")
     private let homePageSubtitleKey = DTBunle.string("home_page_subtitle")
