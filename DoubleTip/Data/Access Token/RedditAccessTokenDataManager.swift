@@ -12,11 +12,13 @@ struct RedditAccessTokenDataManager {
     
     fileprivate let baseUrl: URL = URL(string: "https://www.reddit.com/api/v1/access_token")!
     
-    public func getAccessToken() -> AnyPublisher<AccessTokenData, Error> {
-        return URLSession.shared.dataTaskPublisher(for: getFormattedRequest())
-            .map({ $0.data })
-            .decode(type: AccessTokenData.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+    public func getAccessToken() async throws -> AccessTokenData? {
+        let (data, response) = try await URLSession.shared.data(for: getFormattedRequest())
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw AppError.parsing
+        }
+        let token = try? JSONDecoder().decode(AccessTokenData.self, from: data)
+        return token
     }
     
     private func getFormattedRequest() -> URLRequest {

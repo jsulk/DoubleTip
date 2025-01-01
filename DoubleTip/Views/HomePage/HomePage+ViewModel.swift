@@ -7,21 +7,29 @@
 
 import Foundation
 import Combine
+import SwiftUI
+import CoreData
 
 extension HomePage {
+    @MainActor
     class ViewModel: ObservableObject {
-        
         @Published var expenseAmount: Double? = nil
         @Published var tipPercentage: Int? = nil
         @Published var totalAmount: String = ""
         @Published var totalAmountIsHidden: Bool = true
+        @Published var lifeTips: [LifeTip]?
+        @Published var lifeTip: LifeTip?
+        @Published var lifeTipTitle: String = ""
+        @Published var lifeTipAuthor: String = ""
         
+        let container: NSPersistentContainer
         private var currentCalculatedTip: Int? = nil
         private var currentCalculatedExpense: Double? = nil
         private var cancellables = Set<AnyCancellable>()
         
         init() {
-            fetchTipDataAsync()
+            container = NSPersistentContainer(name: "LifeTip")
+            loadPersistentCache()
             
             $tipPercentage
                 .combineLatest($expenseAmount)
@@ -31,24 +39,26 @@ extension HomePage {
                     return (expenseAndTipNil || expenseAndTipDifferentValyesValues)
                 }
                 .assign(to: &$totalAmountIsHidden)
-        }
-        
-        func fetchTipDataAsync() {
-            RedditAccessTokenDataManager().getAccessToken().flatMap { accessTokenData -> AnyPublisher<TipDataResponse, Error> in
-                SubredditDataManager().getTips(accessToken: accessTokenData.access_token)
-            }.sink { result in
-                switch result {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                default:
-                    break
+            
+            $lifeTip
+                .map {
+                    guard let tipTitle = $0?.title else {
+                        // TODO: manage Strings
+                        return "We encountered an error loading a tip for you. Our default tip is: \"Being a software engineer is hard!\""
+                    }
+                    return "\"\(tipTitle)\""
                 }
-            } receiveValue: { tipDataObject in
-                DispatchQueue.main.async {
-                    print("Tip array: \(tipDataObject.data.children)")
+                .assign(to: &$lifeTipTitle)
+            
+            $lifeTip
+                .map {
+                    // TODO: manage Strings
+                    guard let author = $0?.author, author != "[deleted]" else {
+                        return "- Author unknown"
+                    }
+                    return "- \(author)"
                 }
-            }
-            .store(in: &cancellables)
+                .assign(to: &$lifeTipAuthor)
         }
         
         func calculateTipPercentage() {
@@ -61,6 +71,56 @@ extension HomePage {
             totalAmount = GlobalUtilities.totalAmountWiithTipAsDouble(totalExpense: expenseAmount, tipPercentage: tipPercentage)?.formattedAsCurrency() ?? DTBunle.string("error_calculating")
             
             totalAmountIsHidden = false
+            
+            self.lifeTip = lifeTips?.randomElement()
+        }
+        
+        private func loadPersistentCache() {
+            container.loadPersistentStores { description, error in
+                guard error == nil else {
+                    // TODO: Handle error if load of core data object fails
+                    print("Load of persistent storage failed")
+                    return
+                }
+            }
+            Task {
+                await self.fetchPersistentLifeTips()
+            }
+        }
+        
+        private func fetchPersistentLifeTips() async {
+            // TODO: manage Strings
+            let lifeTipRequest: NSFetchRequest = NSFetchRequest<LifeTip>(entityName: "LifeTip")
+            do {
+                let localStorageLifeTips = try container.viewContext.fetch(lifeTipRequest)
+                if localStorageLifeTips.isEmpty {
+                    let fetchedTipData = try await LifeTipDataManager().fetchTipData()
+                    self.saveData(tipDataObject: fetchedTipData)
+                } else {
+                    lifeTips = localStorageLifeTips
+                }
+            } catch {
+                // TODO: handle error
+                print("Error fetching from storage: \(error.localizedDescription)")
+            }
+        }
+        
+        private func saveData(tipDataObject: TipDataResponse) {
+            var lifeTips: [LifeTip] = []
+            for tip in tipDataObject.data.children {
+                let lifeTip = LifeTip(context: container.viewContext)
+                lifeTip.id = UUID()
+                lifeTip.title = tip.data.title
+                lifeTip.author = tip.data.author
+                lifeTips.append(lifeTip)
+            }
+            do {
+                try container.viewContext.save()
+                loadPersistentCache()
+            } catch {
+                // TODO: handle coredata save error
+                print("HANDLE SAVE ERROR HERE")
+            }
         }
     }
 }

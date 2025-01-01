@@ -12,6 +12,7 @@ import Combine
 struct HomePage: View {
     
     @StateObject var viewModel: ViewModel
+//    @EnvironmentObject var taskObject: TaskObservableObject
     
     private let homePageTitleKey = DTBunle.string("home_page_title")
     private let homePageSubtitleKey = DTBunle.string("home_page_subtitle")
@@ -37,27 +38,42 @@ struct HomePage: View {
             calculatorView
             
             Spacer()
+            
+            bonusTipView
+                .isHidden(viewModel.totalAmountIsHidden)
         }
         .padding()
     }
     
-    var pageTitle: some View {
+    private var bonusTipView: some View {
+        VStack {
+            Text(viewModel.lifeTipTitle)
+                .padding(.bottom, 8)
+                .font(.caption2)
+                .italic()
+            Text(viewModel.lifeTipAuthor)
+                .font(.caption2)
+                .italic()
+        }
+    }
+    
+    private var pageTitle: some View {
         Text(homePageTitleKey)
             .font(.custom(titleFont, size: 36))
             .foregroundStyle(Color.doubleTipGreen.gradient)
     }
     
-    var pageSubtitle: some View {
+    private var pageSubtitle: some View {
         Text(homePageSubtitleKey)
             .multilineTextAlignment(.center)
             .font(.custom(subtitleFont, size: 18))
             .foregroundStyle(Color.doubleTipGreen.gradient)
     }
     
-    var calculatorView: some View {
+    private var calculatorView: some View {
         VStack {
             Form {
-                
+                // TODO: break out subviews
                 Section {
                     VStack {
                         TextField("$0.00", value: $viewModel.expenseAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))

@@ -12,11 +12,13 @@ struct SubredditDataManager {
     
     fileprivate let baseUrl: URL = URL(string: "https://oauth.reddit.com/r/lifeprotips/top?t=all&limit=100")!
     
-    public func getTips(accessToken: String) -> AnyPublisher<TipDataResponse, Error> {
-        return URLSession.shared.dataTaskPublisher(for: getFormattedRequest(accessToken: accessToken))
-            .map({ $0.data })
-            .decode(type: TipDataResponse.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+    public func getTips(accessToken: String) async throws -> TipDataResponse? {
+        let (data, response) = try await URLSession.shared.data(for: getFormattedRequest(accessToken: accessToken))
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw AppError.network
+        }
+        let tipData = try? JSONDecoder().decode(TipDataResponse.self, from: data)
+        return tipData
     }
     
     private func getFormattedRequest(accessToken: String) -> URLRequest {
