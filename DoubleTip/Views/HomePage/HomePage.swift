@@ -17,6 +17,9 @@ struct HomePage: View {
     private let calculateButtonTitle = DTBunle.string("calculate")
     private let titleFont = DTBunle.string("font_large_page_title")
     private let subtitleFont = DTBunle.string("font_page_subtitle")
+    private let billAmount = DTBunle.string("bill_amount")
+    private let tipPercentage = DTBunle.string("tip_percentage")
+    private let total = DTBunle.string("total")
     
     var body: some View {
         contentView
@@ -71,52 +74,65 @@ struct HomePage: View {
     private var calculatorView: some View {
         VStack {
             Form {
-                // TODO: break out subviews
                 Section {
-                    VStack {
-                        TextField("$0.00", value: $viewModel.expenseAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        Text("BILL AMOUNT")
-                            .font(.custom(subtitleFont, size: 16))
-                            .foregroundStyle(Color.gray)
-                    }
-                    
+                    billAmountSection
                 }
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
 
                 Section {
-                    VStack {
-                        TextField("15%", value: $viewModel.tipPercentage, format: .percent)
-                        Text("TIP PERCENTAGE")
-                            .font(.custom(subtitleFont, size: 16))
-                            .foregroundStyle(Color.gray)
-                    }
-                    
+                    tipPercentageSection
                 }
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
                 
                 Section {
-                    Button(action: self.viewModel.calculateTipPercentage, label: {
-                        Text(calculateButtonTitle)
-                    })
+                    calculateButtonSection
                 }
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
                 
                 Section {
-                    VStack {
-                        Text("TOTAL")
-                            .font(.custom(subtitleFont, size: 16))
-                            .foregroundStyle(Color.gray)
-                        Text(viewModel.totalAmount)
-                    }
+                    totalSection
                 }
                 .isHidden(viewModel.totalAmountIsHidden)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
             }
             .scrollContentBackground(.hidden)
+        }
+    }
+    
+    private var billAmountSection: some View {
+        VStack {
+            TextField("$0.00", value: $viewModel.expenseAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+            Text(billAmount)
+                .font(.custom(subtitleFont, size: 16))
+                .foregroundStyle(Color.gray)
+        }
+    }
+    
+    private var tipPercentageSection: some View {
+        VStack {
+            TextField("15%", value: $viewModel.tipPercentage, format: .percent)
+            Text(tipPercentage)
+                .font(.custom(subtitleFont, size: 16))
+                .foregroundStyle(Color.gray)
+        }
+    }
+    
+    private var calculateButtonSection: some View {
+        Button(action: self.viewModel.calculateTipPercentage, label: {
+            Text(calculateButtonTitle)
+        })
+    }
+    
+    private var totalSection: some View {
+        VStack {
+            Text(total)
+                .font(.custom(subtitleFont, size: 16))
+                .foregroundStyle(Color.gray)
+            Text(viewModel.totalAmount)
         }
     }
 }
