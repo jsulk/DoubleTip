@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Foundation
+import Combine
 
 @main
 struct DoubleTipApp: App {
+    private var cancellables = Set<AnyCancellable>()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomePage(viewModel: HomePage.ViewModel())
         }
     }
 }

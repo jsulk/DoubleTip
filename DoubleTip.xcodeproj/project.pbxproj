@@ -7,18 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEA38E972D25C6EB001C73F2 /* LifeTipDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA38E962D25C6EB001C73F2 /* LifeTipDataManager.swift */; };
+		DEB27AD12CA464E9002627EF /* SubredditDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB27AD02CA464E9002627EF /* SubredditDataManager.swift */; };
+		DEB27AD32CA4651C002627EF /* RedditAccessTokenDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB27AD22CA4651C002627EF /* RedditAccessTokenDataManager.swift */; };
+		DEB27AD52CA469F6002627EF /* AccessTokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB27AD42CA469F6002627EF /* AccessTokenData.swift */; };
+		DEB27AD82CA4A3AF002627EF /* TipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB27AD72CA4A3AF002627EF /* TipData.swift */; };
 		DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C092C6516550077CA57 /* DoubleTipApp.swift */; };
-		DECB5C0C2C6516550077CA57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C0B2C6516550077CA57 /* ContentView.swift */; };
+		DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB5C0B2C6516550077CA57 /* HomePage.swift */; };
 		DECB5C0E2C6516580077CA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB5C0D2C6516580077CA57 /* Assets.xcassets */; };
 		DECB5C112C6516580077CA57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB5C102C6516580077CA57 /* Preview Assets.xcassets */; };
+		DEE1AA1C2CEF81F700037AF4 /* LifeTip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEE1AA1A2CEF81F700037AF4 /* LifeTip.xcdatamodeld */; };
+		DEE693F12C9B64CD00963C6E /* GlobalUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */; };
+		DEF4BF262C651AF100CB264A /* DoubleTipUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF252C651AF100CB264A /* DoubleTipUnitTests.swift */; };
+		DEF4BF342C651B2C00CB264A /* DoubleTipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF332C651B2C00CB264A /* DoubleTipUITests.swift */; };
+		DEF4BF362C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF352C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift */; };
+		DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */; };
+		DEF4BF402C6677D400CB264A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEF4BF3F2C6677D400CB264A /* Localizable.strings */; };
+		DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF412C667B3A00CB264A /* DTBundle.swift */; };
+		DEF4BF442C6682A500CB264A /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DEF4BF272C651AF100CB264A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DECB5BFE2C6516550077CA57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DECB5C052C6516550077CA57;
+			remoteInfo = DoubleTip;
+		};
+		DEF4BF372C651B2C00CB264A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DECB5BFE2C6516550077CA57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DECB5C052C6516550077CA57;
+			remoteInfo = DoubleTip;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		DEA38E962D25C6EB001C73F2 /* LifeTipDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTipDataManager.swift; sourceTree = "<group>"; };
+		DEB27AD02CA464E9002627EF /* SubredditDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditDataManager.swift; sourceTree = "<group>"; };
+		DEB27AD22CA4651C002627EF /* RedditAccessTokenDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAccessTokenDataManager.swift; sourceTree = "<group>"; };
+		DEB27AD42CA469F6002627EF /* AccessTokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenData.swift; sourceTree = "<group>"; };
+		DEB27AD72CA4A3AF002627EF /* TipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipData.swift; sourceTree = "<group>"; };
 		DECB5C062C6516550077CA57 /* DoubleTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubleTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECB5C092C6516550077CA57 /* DoubleTipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipApp.swift; sourceTree = "<group>"; };
-		DECB5C0B2C6516550077CA57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DECB5C0B2C6516550077CA57 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		DECB5C0D2C6516580077CA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECB5C102C6516580077CA57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DEE1AA1B2CEF81F700037AF4 /* LifeTip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeTip.xcdatamodel; sourceTree = "<group>"; };
+		DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUtilities.swift; sourceTree = "<group>"; };
+		DEF4BF232C651AF100CB264A /* DoubleTipUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoubleTipUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF4BF252C651AF100CB264A /* DoubleTipUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipUnitTests.swift; sourceTree = "<group>"; };
+		DEF4BF312C651B2C00CB264A /* DoubleTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoubleTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF4BF332C651B2C00CB264A /* DoubleTipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipUITests.swift; sourceTree = "<group>"; };
+		DEF4BF352C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTipUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePage+ViewModel.swift"; sourceTree = "<group>"; };
+		DEF4BF3F2C6677D400CB264A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DEF4BF412C667B3A00CB264A /* DTBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTBundle.swift; sourceTree = "<group>"; };
+		DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,13 +76,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEF4BF202C651AF100CB264A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEF4BF2E2C651B2C00CB264A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DEB27ACC2CA4569A002627EF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DEE693F02C9B64CD00963C6E /* GlobalUtilities.swift */,
+				DEF4BF432C6682A500CB264A /* UtilityExtensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DEB27ACD2CA464AD002627EF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DEB27ACF2CA464C3002627EF /* Access Token */,
+				DEB27ACE2CA464BB002627EF /* Tips */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DEB27ACE2CA464BB002627EF /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				DEB27AD02CA464E9002627EF /* SubredditDataManager.swift */,
+				DEB27AD72CA4A3AF002627EF /* TipData.swift */,
+				DEA38E962D25C6EB001C73F2 /* LifeTipDataManager.swift */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		DEB27ACF2CA464C3002627EF /* Access Token */ = {
+			isa = PBXGroup;
+			children = (
+				DEB27AD22CA4651C002627EF /* RedditAccessTokenDataManager.swift */,
+				DEB27AD42CA469F6002627EF /* AccessTokenData.swift */,
+			);
+			path = "Access Token";
+			sourceTree = "<group>";
+		};
 		DECB5BFD2C6516550077CA57 = {
 			isa = PBXGroup;
 			children = (
+				DEE1AA1A2CEF81F700037AF4 /* LifeTip.xcdatamodeld */,
 				DECB5C082C6516550077CA57 /* DoubleTip */,
+				DEF4BF2C2C651AFF00CB264A /* Tests */,
 				DECB5C072C6516550077CA57 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				DECB5C062C6516550077CA57 /* DoubleTip.app */,
+				DEF4BF232C651AF100CB264A /* DoubleTipUnitTests.xctest */,
+				DEF4BF312C651B2C00CB264A /* DoubleTipUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +153,9 @@
 		DECB5C082C6516550077CA57 /* DoubleTip */ = {
 			isa = PBXGroup;
 			children = (
-				DECB5C092C6516550077CA57 /* DoubleTipApp.swift */,
-				DECB5C0B2C6516550077CA57 /* ContentView.swift */,
+				DEB27ACD2CA464AD002627EF /* Data */,
+				DEF4BF1E2C651A9000CB264A /* Supporting Files */,
+				DEF4BF1D2C651A8500CB264A /* Views */,
 				DECB5C0D2C6516580077CA57 /* Assets.xcassets */,
 				DECB5C0F2C6516580077CA57 /* Preview Content */,
 			);
@@ -65,6 +168,60 @@
 				DECB5C102C6516580077CA57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DEF4BF1D2C651A8500CB264A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEF4BF3C2C6676E400CB264A /* HomePage */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEF4BF1E2C651A9000CB264A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEB27ACC2CA4569A002627EF /* Utilities */,
+				DECB5C092C6516550077CA57 /* DoubleTipApp.swift */,
+				DEF4BF3F2C6677D400CB264A /* Localizable.strings */,
+				DEF4BF412C667B3A00CB264A /* DTBundle.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEF4BF242C651AF100CB264A /* DoubleTipUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DEF4BF252C651AF100CB264A /* DoubleTipUnitTests.swift */,
+			);
+			path = DoubleTipUnitTests;
+			sourceTree = "<group>";
+		};
+		DEF4BF2C2C651AFF00CB264A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DEF4BF242C651AF100CB264A /* DoubleTipUnitTests */,
+				DEF4BF322C651B2C00CB264A /* DoubleTipUITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		DEF4BF322C651B2C00CB264A /* DoubleTipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DEF4BF332C651B2C00CB264A /* DoubleTipUITests.swift */,
+				DEF4BF352C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift */,
+			);
+			path = DoubleTipUITests;
+			sourceTree = "<group>";
+		};
+		DEF4BF3C2C6676E400CB264A /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				DECB5C0B2C6516550077CA57 /* HomePage.swift */,
+				DEF4BF3D2C6676FC00CB264A /* HomePage+ViewModel.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +244,42 @@
 			productReference = DECB5C062C6516550077CA57 /* DoubleTip.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DEF4BF222C651AF100CB264A /* DoubleTipUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEF4BF292C651AF100CB264A /* Build configuration list for PBXNativeTarget "DoubleTipUnitTests" */;
+			buildPhases = (
+				DEF4BF1F2C651AF100CB264A /* Sources */,
+				DEF4BF202C651AF100CB264A /* Frameworks */,
+				DEF4BF212C651AF100CB264A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEF4BF282C651AF100CB264A /* PBXTargetDependency */,
+			);
+			name = DoubleTipUnitTests;
+			productName = DoubleTipUnitTests;
+			productReference = DEF4BF232C651AF100CB264A /* DoubleTipUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DEF4BF302C651B2C00CB264A /* DoubleTipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEF4BF392C651B2C00CB264A /* Build configuration list for PBXNativeTarget "DoubleTipUITests" */;
+			buildPhases = (
+				DEF4BF2D2C651B2C00CB264A /* Sources */,
+				DEF4BF2E2C651B2C00CB264A /* Frameworks */,
+				DEF4BF2F2C651B2C00CB264A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEF4BF382C651B2C00CB264A /* PBXTargetDependency */,
+			);
+			name = DoubleTipUITests;
+			productName = DoubleTipUITests;
+			productReference = DEF4BF312C651B2C00CB264A /* DoubleTipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +292,14 @@
 				TargetAttributes = {
 					DECB5C052C6516550077CA57 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					DEF4BF222C651AF100CB264A = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DECB5C052C6516550077CA57;
+					};
+					DEF4BF302C651B2C00CB264A = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DECB5C052C6516550077CA57;
 					};
 				};
 			};
@@ -116,6 +317,8 @@
 			projectRoot = "";
 			targets = (
 				DECB5C052C6516550077CA57 /* DoubleTip */,
+				DEF4BF222C651AF100CB264A /* DoubleTipUnitTests */,
+				DEF4BF302C651B2C00CB264A /* DoubleTipUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +329,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DECB5C112C6516580077CA57 /* Preview Assets.xcassets in Resources */,
+				DEF4BF402C6677D400CB264A /* Localizable.strings in Resources */,
 				DECB5C0E2C6516580077CA57 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEF4BF212C651AF100CB264A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEF4BF2F2C651B2C00CB264A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +355,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECB5C0C2C6516550077CA57 /* ContentView.swift in Sources */,
+				DECB5C0C2C6516550077CA57 /* HomePage.swift in Sources */,
 				DECB5C0A2C6516550077CA57 /* DoubleTipApp.swift in Sources */,
+				DEB27AD52CA469F6002627EF /* AccessTokenData.swift in Sources */,
+				DEF4BF3E2C6676FC00CB264A /* HomePage+ViewModel.swift in Sources */,
+				DEE693F12C9B64CD00963C6E /* GlobalUtilities.swift in Sources */,
+				DEB27AD82CA4A3AF002627EF /* TipData.swift in Sources */,
+				DEB27AD12CA464E9002627EF /* SubredditDataManager.swift in Sources */,
+				DEB27AD32CA4651C002627EF /* RedditAccessTokenDataManager.swift in Sources */,
+				DEF4BF442C6682A500CB264A /* UtilityExtensions.swift in Sources */,
+				DEE1AA1C2CEF81F700037AF4 /* LifeTip.xcdatamodeld in Sources */,
+				DEF4BF422C667B3A00CB264A /* DTBundle.swift in Sources */,
+				DEA38E972D25C6EB001C73F2 /* LifeTipDataManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEF4BF1F2C651AF100CB264A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF4BF262C651AF100CB264A /* DoubleTipUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEF4BF2D2C651B2C00CB264A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF4BF342C651B2C00CB264A /* DoubleTipUITests.swift in Sources */,
+				DEF4BF362C651B2C00CB264A /* DoubleTipUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEF4BF282C651AF100CB264A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DECB5C052C6516550077CA57 /* DoubleTip */;
+			targetProxy = DEF4BF272C651AF100CB264A /* PBXContainerItemProxy */;
+		};
+		DEF4BF382C651B2C00CB264A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DECB5C052C6516550077CA57 /* DoubleTip */;
+			targetProxy = DEF4BF372C651B2C00CB264A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DECB5C122C6516580077CA57 /* Debug */ = {
@@ -320,6 +578,72 @@
 			};
 			name = Release;
 		};
+		DEF4BF2A2C651AF100CB264A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakesulkoske.DoubleTipUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoubleTip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DoubleTip";
+			};
+			name = Debug;
+		};
+		DEF4BF2B2C651AF100CB264A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakesulkoske.DoubleTipUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoubleTip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DoubleTip";
+			};
+			name = Release;
+		};
+		DEF4BF3A2C651B2C00CB264A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakesulkoske.DoubleTipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DoubleTip;
+			};
+			name = Debug;
+		};
+		DEF4BF3B2C651B2C00CB264A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakesulkoske.DoubleTipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DoubleTip;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -341,7 +665,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DEF4BF292C651AF100CB264A /* Build configuration list for PBXNativeTarget "DoubleTipUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEF4BF2A2C651AF100CB264A /* Debug */,
+				DEF4BF2B2C651AF100CB264A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEF4BF392C651B2C00CB264A /* Build configuration list for PBXNativeTarget "DoubleTipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEF4BF3A2C651B2C00CB264A /* Debug */,
+				DEF4BF3B2C651B2C00CB264A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DEE1AA1A2CEF81F700037AF4 /* LifeTip.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DEE1AA1B2CEF81F700037AF4 /* LifeTip.xcdatamodel */,
+			);
+			currentVersion = DEE1AA1B2CEF81F700037AF4 /* LifeTip.xcdatamodel */;
+			path = LifeTip.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DECB5BFE2C6516550077CA57 /* Project object */;
 }
