@@ -7,14 +7,14 @@
  */
 
 //MARK: App Strings
-"home_page_title" = "Double Tip";
+"double_tip" = "Double Tip";
 "home_page_subtitle" = "Enter the cost and the percentage below to receive your two tips!";
 "calculate" = "Calculate";
 "life_tip" = "LifeTip";
 
 //MARK: Font Strings
-"font_large_page_title" = "Futura-CondensedExtraBold";
-"font_page_subtitle" = "Futura-Medium";
+"font_large_futura_bold" = "Futura-CondensedExtraBold";
+"font_page_futura_medium" = "Futura-Medium";
 
 //MARK: Error Strings
 "error_calculating" = "We're sorry, there was an error calculating your total tip amount.";

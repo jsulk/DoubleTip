@@ -12,11 +12,9 @@ import Combine
 struct HomePage: View {
     @StateObject var viewModel: ViewModel
     
-    private let homePageTitleKey = DTBunle.string("home_page_title")
     private let homePageSubtitleKey = DTBunle.string("home_page_subtitle")
     private let calculateButtonTitle = DTBunle.string("calculate")
-    private let titleFont = DTBunle.string("font_large_page_title")
-    private let subtitleFont = DTBunle.string("font_page_subtitle")
+    private let fontMedium = DTBunle.string("font_page_futura_medium")
     private let billAmount = DTBunle.string("bill_amount")
     private let tipPercentage = DTBunle.string("tip_percentage")
     private let total = DTBunle.string("total")
@@ -28,11 +26,8 @@ struct HomePage: View {
     
     var contentView: some View {
         VStack(alignment: .center) {
-            pageTitle
-                .padding(.vertical, 8)
-            
-            pageSubtitle
-                .padding(.bottom, 16)
+            pageDescription
+                .padding(.vertical, 16)
             
             Spacer()
             
@@ -58,16 +53,10 @@ struct HomePage: View {
         }
     }
     
-    private var pageTitle: some View {
-        Text(homePageTitleKey)
-            .font(.custom(titleFont, size: 36))
-            .foregroundStyle(Color.doubleTipGreen.gradient)
-    }
-    
-    private var pageSubtitle: some View {
+    private var pageDescription: some View {
         Text(homePageSubtitleKey)
             .multilineTextAlignment(.center)
-            .font(.custom(subtitleFont, size: 18))
+            .font(.custom(fontMedium, size: 18))
             .foregroundStyle(Color.doubleTipGreen.gradient)
     }
     
@@ -107,7 +96,7 @@ struct HomePage: View {
         VStack {
             TextField("$0.00", value: $viewModel.expenseAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
             Text(billAmount)
-                .font(.custom(subtitleFont, size: 16))
+                .font(.custom(fontMedium, size: 16))
                 .foregroundStyle(Color.gray)
         }
     }
@@ -116,7 +105,7 @@ struct HomePage: View {
         VStack {
             TextField("15%", value: $viewModel.tipPercentage, format: .percent)
             Text(tipPercentage)
-                .font(.custom(subtitleFont, size: 16))
+                .font(.custom(fontMedium, size: 16))
                 .foregroundStyle(Color.gray)
         }
     }
@@ -124,13 +113,19 @@ struct HomePage: View {
     private var calculateButtonSection: some View {
         Button(action: self.viewModel.calculateTipPercentage, label: {
             Text(calculateButtonTitle)
+                .frame(maxWidth: .infinity)
+                .foregroundStyle(Color.white)
+                .font(.custom(fontMedium, size: 18))
         })
+        .padding()
+        .background(Color.doubleTipGreen.gradient)
+        .cornerRadius(15)
     }
     
     private var totalSection: some View {
         VStack {
             Text(total)
-                .font(.custom(subtitleFont, size: 16))
+                .font(.custom(fontMedium, size: 16))
                 .foregroundStyle(Color.gray)
             Text(viewModel.totalAmount)
         }
