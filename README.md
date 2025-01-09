@@ -26,6 +26,9 @@ Requirements:
 
 This app is meant to be a playground for new functionality. 
 In the future, I hope to explore the following:
+- Server driven access token management for Reddit API
 - Update CoreData implementation to SwiftData
 - Update current test suites to Swift Testing
 - Integrate the use of actors and swift Macros
+
+
